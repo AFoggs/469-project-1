@@ -15,14 +15,14 @@ const options = {
 /* GET home page. */
 router.get('/', function(req, res, next) {
   rpn(options).then( function(results) {
-    //data test
-    console.log("Profile", results.profile);
     //render profile
-    res.render('index', { title: 'Weather Conditions in Chicago', weather: results.weather});
-  });
+    res.render('index', { title: 'Weather Conditions in Chicago', weather: results.current_observation.weather, update: results.current_observation.observation_time });
 });
+  });
+
 
 module.exports = router;
+
 
 /*
 console.log('Request URL value:', request_url);
