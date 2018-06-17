@@ -18,7 +18,10 @@ router.get('/', function(req, res, next) {
   rpn(options).then( function(results) {
     //render profile
     //Grabbing the City, Weather, Last Update, Temperature in F, Real Feel in F, Rain in Inches, Humidity, and Heat index in F.
-    res.render('index', { title: 'Weather Conditions in ' + results.current_observation.display_location.full, weather: results.current_observation.weather, update: results.current_observation.observation_time, temp: results.current_observation.temp_f, realfeel: results.current_observation.feelslike_f, humidity: results.current_observation.relative_humidity, rain: results.current_observation.precip_today_in, heat: results.current_observation.heat_index_f,  });
+    res.render('index', { title: 'Weather Conditions in ' + results.current_observation.display_location.full, weather: results.current_observation.weather,
+    update: results.current_observation.observation_time, temp: results.current_observation.temp_f, realfeel: results.current_observation.feelslike_f,
+    humidity: results.current_observation.relative_humidity, rain: results.current_observation.precip_today_in, heat: results.current_observation.heat_index_f,
+    tempc: results.current_observation.temp_c, realfeelc: results.current_observation.feelslike_c, heatc: results.current_observation.heat_index_c});
 });
   });
 
