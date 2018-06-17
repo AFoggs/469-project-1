@@ -2,10 +2,11 @@ var express = require('express');
 var router = express.Router();
 //variable for rpn
 const rpn = require('request-promise-native');
+const key = process.env.STOCK_KEY;
 
 //create function to call api
 const options = {
-  url:"http://api.wunderground.com/api/cf0c3a866fbf51c3/conditions/q/IL/Chicago.json",
+  url:"http://api.wunderground.com/api/" + key + "/conditions/q/IL/Chicago.json",
   headers:  {
     'User-Agent': 'Request-Promise'
   },
