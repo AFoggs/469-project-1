@@ -17,7 +17,8 @@ const options = {
 router.get('/', function(req, res, next) {
   rpn(options).then( function(results) {
     //render profile
-    res.render('index', { title: 'Weather Conditions in Chicago', weather: results.current_observation.weather, update: results.current_observation.observation_time });
+    //Grabbing the City, Weather, Last Update, Temperature in F, Real Feel in F, Rain in Inches, Humidity, and Heat index in F.
+    res.render('index', { title: 'Weather Conditions in Chicago', weather: results.current_observation.weather, update: results.current_observation.observation_time, temp: results.current_observation.temp_f, realfeel: results.current_observation.feelslike_f, humidity: results.current_observation.humidity, rain: results.current_observation.percip_today_in, heat: results.current_observation.heat_index_f,  });
 });
   });
 
