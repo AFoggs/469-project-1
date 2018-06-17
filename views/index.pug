@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  h2 Weather #{weather}
-  h3 Updated Last: #{update}
+  h1 #{title}
+  h2 Current Temperature: #{temp} | Real Feel: #{realfeel} | It is currently #{weather}
+  h3 Humidity #{humidity} | Rain Fall #{rain} | Heat Index #{heat}
+  footer #{update}
