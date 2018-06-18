@@ -1,7 +1,109 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* stylelint-disable */
+/* Keep reset CSS to one minified line */
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+/* stylelint-enable */
+
+/* ===== BASE STYLES ===== */
+
+/*
+Text following Minor Thirs Modular Scale
+http://www.modularscale.com/?18&px&1.2&web&text
+*/
+
+html {
+  font-family: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", sans-serif;
+  font-size: 1.125em; /* 18px @ 16px */
+  line-height: 1.222em; /* 22px = 1 gridline*/
+  background-color: #636262;
+  padding-left: 3.384615384615384615%; /* 22px / 650 px */
+  padding-right: 3.384615384615384615%; /* 22px / 650 px */
+  margin: 0 auto;
+  max-width: 100%;
 }
+
+h1{
+  font-size: 2.333em; /*37.435px @ 16px*/
+  line-height: 1.175370642em; /*44px / 37.435px*/
+  padding-bottom: 1.175370642em; /* 44px / 37.435 px 2 gridlines */
+}
+
+h2{
+  font-weight: bold;
+  font-size: 1.62em; /*25.92px @ 16px*/
+  line-height: 0.848765432098765em; /*22px / 25.92px*/
+  padding-bottom: 0.848765432098765em; /*22px / 25.92px 1 gridline*/
+}
+
+h3{
+  font-style: italic;
+  font-size: 1.35em;/*21.6px @ 16px */
+  line-height: 1.0185185em;/*22px / 21.6px*/
+  padding-bottom: 0.5092592592em; /* 11px / 21.6px half a gridline */
+
+}
+
+p,
+b,
+i,
+strong,
+ul {
+  padding-bottom: 1.222em; /* 22px */
+
+}
+
+li {
+  padding-bottom: 0.61111111em; /* 11px = half gridline*/
+}
+
+li:last-child {
+  padding-bottom: 0;
+}
+
+audio,
+img,
+video{
+  display: block;
+  max-width: 70%;
+  padding-bottom: 2.444em; /* 44px padding */
+}
+
+
+/* ===== LAYOUT STYLES =====*/
+/* Here we will include all html id elements */
+
+
+/* ===== MODULAR STYLES ===== */
+/* Here we will include all html class elements */
+
+/* ===== STATE STYLES ===== */
+/* Here we will include our Media queries for
+different minimum screen sizes */
+
+/* 5:6 */
+/*
+5 + 6 = 11
+650 / 11 = 59.091
+5 x 59.091 = 295.455 Grid 1
+6 x 59.091 = 354.546 Grid 2
+*/
+
+
+@media screen and (min-width: 650px) {
+
+p,
+h1,
+h2,
+h3 {
+  clear: both;
+}
+
+
+
+@media screen and (min-width: 1200px) {
 
 a {
   color: #00B7FF;
