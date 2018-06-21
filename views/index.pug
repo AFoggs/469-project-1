@@ -2,6 +2,20 @@ extends layout
 
 block content
   h1 #{title}
-  h2 Current Temperature: #{temp}&#176; F (#{tempc}&#176; C)| Real Feel: #{realfeel}&#176; F (#{realfeelc}&#176; C)| It is currently #{weather}
-  h3 Humidity: #{humidity} | Rain Fall: #{rain} inches | Heat Index: #{heat}&#176; F (#{heatc}&#176; C)
-  footer Weather #{update}
+    section#temperature
+      ul
+        li Current Temperature: #{temp}&#176; F (#{tempc}&#176; C)|
+        li Real Feel: #{realfeel}&#176; F (#{realfeelc}&#176; C)|
+        li Heat Index: #{heat}&#176; F (#{heatc}&#176; C)
+      ul/
+    section/
+
+    section#conditions
+      ul
+        li It is currently #{weather} |
+        li Humidity: #{humidity} |
+        li Rain Fall: #{rain} Inches
+      ul/
+    section/
+
+  footer#update Weather #{update}
