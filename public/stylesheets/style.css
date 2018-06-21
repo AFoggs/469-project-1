@@ -14,11 +14,12 @@ Text following Minor Thirs Modular Scale
 http://www.modularscale.com/?18&px&1.2&web&text
 */
 
+
 html {
   font-family: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", sans-serif;
   font-size: 1.125em; /* 18px @ 16px */
   line-height: 1.222em; /* 22px = 1 gridline*/
-  background-color: #636262;
+  background-color: #FFFFFF;
   padding-left: 3.384615384615384615%; /* 22px / 650 px */
   padding-right: 3.384615384615384615%; /* 22px / 650 px */
   margin: 0 auto;
@@ -28,7 +29,9 @@ html {
 h1{
   font-size: 2.333em; /*37.435px @ 16px*/
   line-height: 1.175370642em; /*44px / 37.435px*/
-  padding-bottom: 1.175370642em; /* 44px / 37.435 px 2 gridlines */
+  padding-top: 0.848765432098765em; /*22px / 25.92px 1 gridline*/
+  padding-bottom: 0.848765432098765em; /*22px / 25.92px 1 gridline*/
+  text-align: center;
 }
 
 h2{
@@ -50,18 +53,12 @@ p,
 b,
 i,
 strong,
-ul {
+ul,
+li {
   padding-bottom: 1.222em; /* 22px */
 
 }
 
-li {
-  padding-bottom: 0.61111111em; /* 11px = half gridline*/
-}
-
-li:last-child {
-  padding-bottom: 0;
-}
 
 audio,
 img,
@@ -74,6 +71,11 @@ video{
 
 /* ===== LAYOUT STYLES =====*/
 /* Here we will include all html id elements */
+
+#wrapper, #weather {
+  text-align: center;
+}
+
 
 
 /* ===== MODULAR STYLES ===== */
@@ -92,19 +94,42 @@ different minimum screen sizes */
 */
 
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 280px) {
 
-p,
-h1,
-h2,
-h3 {
-  clear: both;
-}
+
 
 
 
 @media screen and (min-width: 1200px) {
 
-a {
-  color: #00B7FF;
-}
+
+  #wrapper {
+  display: grid;
+  height: 18em;
+  margin: 0;
+  place-items: center center;
+  background-color: #F8F8F8;
+  border-radius: .5em;
+  }
+
+  #end
+  {
+    border-right: 0em;
+  }
+
+  #weather {
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+      padding-bottom: 1.222em; /* 22px */
+  }
+
+  li {
+    height: 25px;
+    float: left;
+    margin-right: 0px;
+    border-right: 1px solid #aaa;
+    padding: 0 20px;
+  }
