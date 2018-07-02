@@ -19,6 +19,25 @@ block content
       ul/
     section/
   div/
+
+  div#selection
+    form#citySelect(method='post' action='/')
+      x Select a city in Illinois to check it's weather:
+      select(name="city")
+        option(value="Chicago" selected="selected") Chicago
+        option(value="Peoria") Peoria
+        option(value="Rockford") Rockford
+        option(value="Campaign") Campaign
+        option(value="Naperville") Naperville
+        option(value="Joliet") Joliet
+        option(value="Schaumburg") Schaumburg
+        option(value="Springfield") Springfield
+        option(value="Elgin") Elgin
+        option(value="Evanston") Evanston
+        option(value="Carbondale") Carbondale
+      input(type="submit" value="Submit")
+  div/
+
   div
       footer#weather #{update}
   div/
