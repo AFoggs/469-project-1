@@ -9,16 +9,14 @@ let city = "Chicago";
 
 
 
-/** bodyParser.urlencoded(options)
- * Parses the text as URL encoded data (which is how browsers tend to send form data from regular forms set to POST)
- * and exposes the resulting object (containing the keys and values) on req.body
- */
+// bodyParser.urlencoded(options)
+// Parses the text as URL encoded data (which is how browsers tend to send form data from regular forms set to POST)
+// and exposes the resulting object (containing the keys and values) on req.body
 bodyParser.urlencoded({
-    extended: true
+  extended: true
 });
-/**bodyParser.json(options)
- * Parses the text as JSON and exposes the resulting object on req.body.
- */
+// bodyParser.json(options)
+// Parses the text as JSON and exposes the resulting object on req.body.
 bodyParser.json();
 
 
@@ -26,7 +24,7 @@ bodyParser.json();
 
 // create function to call api
 let options = {
-  url:`http://api.wunderground.com/api/${ key }/conditions/q/IL/` + city + `.json`,
+  url:`http://api.wunderground.com/api/${ key }/conditions/q/IL/${ city }.json`,
   headers:  {
     'User-Agent': 'Request-Promise'
   },
@@ -38,11 +36,11 @@ let options = {
 router.get('/', function(req, res, next) {
   rpn(options).then( function(results) {
     // render profile
-    const observations = results.current_observation; //Prepend for Data gathering
+    const observations = results.current_observation; // Prepend for Data gathering
     // Grabbing the City, Weather, Last Update, Temperature in F, Real Feel in F, Rain in Inches, Humidity, and Heat index in F for Chicago
     res.render('index', { title: observations.display_location.full, weather: observations.weather, update: observations.observation_time,
-    temp: observations.temp_f, realfeel: observations.feelslike_f, humidity: observations.relative_humidity, rain: observations.precip_today_in,
-    heat: observations.heat_index_f, tempc: observations.temp_c, realfeelc: observations.feelslike_c, heatc: observations.heat_index_c});
+      temp: observations.temp_f, realfeel: observations.feelslike_f, humidity: observations.relative_humidity, rain: observations.precip_today_in,
+      heat: observations.heat_index_f, tempc: observations.temp_c, realfeelc: observations.feelslike_c, heatc: observations.heat_index_c});
   });
 });
 
@@ -53,7 +51,7 @@ router.post("/", function (req, res, next) {
 
   // create function to call api
   let options = {
-    url:`http://api.wunderground.com/api/${ key }/conditions/q/IL/` + citySelect + `.json`,
+    url:`http://api.wunderground.com/api/${ key }/conditions/q/IL/${ citySelect }.json`,
     headers:  {
       'User-Agent': 'Request-Promise'
     },
@@ -62,11 +60,11 @@ router.post("/", function (req, res, next) {
 
   rpn(options).then( function(results) {
     // render profile
-    const observations = results.current_observation; //Prepend for Data gathering
+    const observations = results.current_observation; // Prepend for Data gathering
     // Grabbing the City, Weather, Last Update, Temperature in F, Real Feel in F, Rain in Inches, Humidity, and Heat index in F for Chicago
     res.render('index', { title: observations.display_location.full, weather: observations.weather, update: observations.observation_time,
-    temp: observations.temp_f, realfeel: observations.feelslike_f, humidity: observations.relative_humidity, rain: observations.precip_today_in,
-    heat: observations.heat_index_f, tempc: observations.temp_c, realfeelc: observations.feelslike_c, heatc: observations.heat_index_c});
+      temp: observations.temp_f, realfeel: observations.feelslike_f, humidity: observations.relative_humidity, rain: observations.precip_today_in,
+      heat: observations.heat_index_f, tempc: observations.temp_c, realfeelc: observations.feelslike_c, heatc: observations.heat_index_c});
   });
 
 
@@ -77,11 +75,11 @@ console.log("hello");
 
 module.exports = router;
 
-//Automate calls with a limit of 4 calls, one every 15 minutes
-/*function intervalFunc() {
-    console.log();
-     }
-    setInterval(intervalFunc,5000);*/
+// Automate calls with a limit of 4 calls, one every 15 minutes
+// function intervalFunc() {
+// console.log();
+// }
+// setInterval(intervalFunc,5000);
 
 
 
@@ -130,16 +128,13 @@ module.exports = router;
 // //
 // });
 
-/*
-router.post("/", function (req, res, next) {
-    rpn(options).then( function(results) {
-      // render profile
-      const observations = results.current_observation; //Prepend for Data gathering
-      // Grabbing the City, Weather, Last Update, Temperature in F, Real Feel in F, Rain in Inches, Humidity, and Heat index in F for Chicago
-      res.render('index', { title: observations.display_location.full, weather: observations.weather, update: observations.observation_time,
-      temp: observations.temp_f, realfeel: observations.feelslike_f, humidity: observations.relative_humidity, rain: observations.precip_today_in,
-      heat: observations.heat_index_f, tempc: observations.temp_c, realfeelc: observations.feelslike_c, heatc: observations.heat_index_c});
-    });
-
-});
-*/
+// router.post("/", function (req, res, next) {
+// rpn(options).then( function(results) {
+// // render profile
+// const observations = results.current_observation; //Prepend for Data gathering
+// // Grabbing the City, Weather, Last Update, Temperature in F, Real Feel in F, Rain in Inches, Humidity, and Heat index in F for Chicago
+// res.render('index', { title: observations.display_location.full, weather: observations.weather, update: observations.observation_time,
+// temp: observations.temp_f, realfeel: observations.feelslike_f, humidity: observations.relative_humidity, rain: observations.precip_today_in,
+// heat: observations.heat_index_f, tempc: observations.temp_c, realfeelc: observations.feelslike_c, heatc: observations.heat_index_c});
+// });
+// });
