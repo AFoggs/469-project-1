@@ -3,15 +3,10 @@ let router = express.Router();
 let calls = 0;
 // variable for rpn
 const rpn = require('request-promise-native');
-let key = process.env.STOCK_KEY;
+const key = process.env.STOCK_KEY;
 const bodyParser = require("body-parser");
 let city = "Chicago";
 
-const aws = require('aws-sdk');
-
-let key = new aws.S3({
-  accessKeyId: process.env.KEY
-});
 
 
 /** bodyParser.urlencoded(options)
