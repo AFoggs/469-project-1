@@ -1,6 +1,6 @@
+'use strict';
 let express = require('express');
 let router = express.Router();
-let calls = 0;
 // variable for rpn
 const rpn = require('request-promise-native');
 const key = process.env.STOCK_KEY;
@@ -33,7 +33,7 @@ let options = {
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   rpn(options).then( function(results) {
     // render profile
     const observations = results.current_observation; // Prepend for Data gathering
@@ -45,7 +45,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* POST web page */
-router.post("/", function (req, res, next) {
+router.post("/", function (req, res) {
   let citySelect = req.body.city;
   console.log(citySelect);
 
@@ -69,9 +69,6 @@ router.post("/", function (req, res, next) {
 
 
 });
-
-
-console.log("hello");
 
 module.exports = router;
 
