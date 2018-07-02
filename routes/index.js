@@ -3,7 +3,13 @@ let router = express.Router();
 let calls = 0;
 // variable for rpn
 const rpn = require('request-promise-native');
-const key = process.env.STOCK_KEY;
+//const key = process.env.STOCK_KEY;
+const aws = require('aws-sdk');
+
+let key = new aws.S3({
+  accessKeyId = process.env.STOCK_KEY
+});
+
 const bodyParser = require("body-parser");
 let city = "Chicago";
 
@@ -26,7 +32,7 @@ bodyParser.json();
 
 // create function to call api
 let options = {
-  url:`http://api.wunderground.com/api/${ TheKey }/conditions/q/IL/` + city + `.json`,
+  url:`http://api.wunderground.com/api/${ key }/conditions/q/IL/` + city + `.json`,
   headers:  {
     'User-Agent': 'Request-Promise'
   },
