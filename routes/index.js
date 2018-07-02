@@ -1,9 +1,14 @@
 let express = require('express');
 let router = express.Router();
 let calls = 0;
+
+express.get('/keys', (req, res) =>{
+  const key = process.env.STOCK_KEY;
+  res.send(result);
+})
 // variable for rpn
 const rpn = require('request-promise-native');
-const key = process.env.STOCK_KEY;
+//const key = process.env.STOCK_KEY;
 const bodyParser = require("body-parser");
 let city = "Chicago";
 
@@ -57,7 +62,7 @@ router.post("/", function (req, res, next) {
     },
     json: true
   };
-  
+
   rpn(options).then( function(results) {
     // render profile
     const observations = results.current_observation; //Prepend for Data gathering
