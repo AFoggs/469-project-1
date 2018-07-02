@@ -26,7 +26,7 @@ bodyParser.json();
 
 // create function to call api
 let options = {
-  url:`http://api.wunderground.com/api/${ key }/conditions/q/IL/` + city + `.json`,
+  url:`http://api.wunderground.com/api/` + key + `/conditions/q/IL/` + city + `.json`,
   headers:  {
     'User-Agent': 'Request-Promise'
   },
