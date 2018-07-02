@@ -3,7 +3,7 @@ let router = express.Router();
 let calls = 0;
 // variable for rpn
 const rpn = require('request-promise-native');
-const key = process.env.STOCK_KEY;
+const key = cf0c3a866fbf51c3;
 const bodyParser = require("body-parser");
 let city = "Chicago";
 
